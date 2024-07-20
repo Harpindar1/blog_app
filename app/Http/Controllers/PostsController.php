@@ -52,9 +52,51 @@ class PostsController extends Controller
         return redirect()->route('posts.index')->with('success','post added successfully');
     }
 
+    // this method update the post 
+    public function edit($id)
+    {
+      $post = Post::findOrFail($id);
+      return view('posts.edit',['post'=>$post]);
+    }
       // this method update the post 
-      public function update()
+      public function update($id, Request $request)
       {
+        $post = Post::findOrFail($id);
+        $rules = [
+          'title'=> 'required',
+          'content' => 'required',
+          'author'=> 'required',
+  
+        ];
+      
+          $validator= Validator::make($request->all(), $rules);
+          if ($validator->fails()){
+            return redirect()->route('posts.edit',$post->id)->withInput()->withErrors($validator);
+          }
+  
+          // update into db
+         
+          $post->title = $request->title;
+          $post->content = $request->content;
+          $post->author = $request->author;
+          $post->publish_date = date('Y-m-d H:i:s');
+          $saved= $post->save();
           
+          //Check if post was created
+            if ( !$saved)
+            {
+                App::abort(500, 'Some Error');
+            }
+          return redirect()->route('posts.index')->with('success','post updated successfully');
+        
       }
+
+      // this method delete the post 
+    public function delete($id)
+    {
+      $post = Post::findOrFail($id);
+      $post->delete();
+      return redirect()->route('posts.index')->with('success','post deleted successfully');
+
+    }
 }

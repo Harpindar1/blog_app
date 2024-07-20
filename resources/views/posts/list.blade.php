@@ -52,8 +52,12 @@
                                       <td>{{$post->author}}</td>
                                       <td>{{$post->publish_date}}</td>
                                       <td>
-                                        <a href="#" class="btn btn-dark">Edit</a>
-                                        <a href="#" class="btn btn-danger">Delete</a>
+                                        <a href="{{ route('posts.edit',$post->id) }}" class="btn btn-dark">Edit</a>
+                                        <form id="delete_post_{{ $post->id }}" action="{{ route('posts.delete', $post->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="btn btn-danger" onclick="confirmDelete({{ $post->id }})">Delete</button>
+                                        </form>
                                       </td>
                                   </tr>
                                 @endforeach
@@ -64,5 +68,18 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+    function confirmDelete(postId) {
+        if (confirm("Are you sure you want to delete?")) {
+            var form = document.getElementById("delete_post_" + postId);
+            if (form) {
+                form.submit();
+            } else {
+                console.error('Form not found');
+            }
+        }
+    }
+
+    </script>
   </body>
 </html>
