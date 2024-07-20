@@ -26,7 +26,7 @@
               </div>
               @endif
         </div>
-        <div class="col-md-10">
+        <div class="col-sm-10 col-lg-12">
                 <div class="card borde-0 shadow-lg my-4">
                     <div class="card-header bg-dark">
                         <h3 class="text-white">My Posts</h3>
