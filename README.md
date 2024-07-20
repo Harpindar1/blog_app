@@ -24,7 +24,8 @@ This project is a simple blog application built using Laravel 11 and MySQL datab
 | id          | INT        | Primary key, auto-incremented |
 | title       | VARCHAR    | Title of the blog post |
 | content     | TEXT       | Content of the blog post |
-| author      | VARCHAR       | Content of the blog post |
+| author      | VARCHAR    | Content of the blog post |
+| publish_date| VARCHAR    | Content of the blog post |
 | created_at  | TIMESTAMP  | Timestamp of when the post was created |
 | updated_at  | TIMESTAMP  | Timestamp of the last update to the post |
 
