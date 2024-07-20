@@ -11,7 +11,8 @@ class PostsController extends Controller
     // this method shows the posts 
     public function index()
     {
-       return view('posts.list');
+       $posts = Post::orderBy('created_at','DESC')->get();
+       return view('posts.list',['posts'=> $posts]);
     }
       // this method create the post 
       public function create()
@@ -29,6 +30,7 @@ class PostsController extends Controller
         'author'=> 'required',
 
       ];
+    
         $validator= Validator::make($request->all(), $rules);
         if ($validator->fails()){
           return redirect()->route('posts.create')->withInput()->withErrors($validator);
@@ -41,6 +43,7 @@ class PostsController extends Controller
         $post->author = $request->author;
         $post->publish_date = date('Y-m-d H:i:s');
         $saved= $post->save();
+        
         //Check if post was created
           if ( !$saved)
           {

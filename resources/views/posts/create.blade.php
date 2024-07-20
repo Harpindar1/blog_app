@@ -21,7 +21,7 @@
                     <div class="card-header bg-dark">
                         <h3 class="text-white">Create Post</h3>
                     </div>
-                    <form action="{{ route('posts.store')}}" method="post">
+                    <form action="{{ route('posts.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                             <div class="mb-3">
@@ -45,13 +45,7 @@
                                     <p class="invalid-feedback">{{ $message }}</p>
                                 @enderror
                             </div>
-                            <div class="mb-3">
-                                <label for="image" class="form-label">Post Image (if any)</label>
-                                <input type="file" class="form-control form-control-lg" placeholder="Select post image (if any)" name="image">
-            
-                            </div>
                             <div class="d-grid">
-
                                 <button class="btn btn-outline-primary btn-lg">Create Post</button>
                             </div>
                         </form> 

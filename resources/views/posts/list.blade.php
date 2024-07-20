@@ -30,7 +30,36 @@
                 <div class="card borde-0 shadow-lg my-4">
                     <div class="card-header bg-dark">
                         <h3 class="text-white">My Posts</h3>
+                        
                     </div>
+                    <div class="card-body">
+                            <table class="table">
+                              <tr>
+                              <th>ID</th>
+                                <th>Title</th>
+                                <th>Content</th>
+                                <th>Author</th>
+                                <th>Published</th>
+                                <th>Action</th>
+                              </tr>
+                              @if ($posts->isNotEmpty())
+                                @foreach ($posts as $post)
+                            
+                                  <tr>
+                                  <td>{{$post->id}}</td>
+                                      <td>{{$post->title}}</td>
+                                      <td>{{$post->content}}</td>
+                                      <td>{{$post->author}}</td>
+                                      <td>{{$post->publish_date}}</td>
+                                      <td>
+                                        <a href="#" class="btn btn-dark">Edit</a>
+                                        <a href="#" class="btn btn-danger">Delete</a>
+                                      </td>
+                                  </tr>
+                                @endforeach
+                              @endif
+                            </table>
+                        </div>
                 </div>
         </div>
     </div>
