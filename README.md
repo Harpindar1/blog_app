@@ -57,6 +57,6 @@ The frontend of the application is designed using Bootstrap 5.3 to ensure a resp
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/Harpindar1/blog_app.git]
+   git clone https://github.com/Harpindar1/blog_app.git
    cd blog_app
    php -S localhost:8000 -t public
