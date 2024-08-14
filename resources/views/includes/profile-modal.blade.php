@@ -9,7 +9,7 @@
                 class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 p-4 dark:border-gray-600">
                 <!-- Modal title -->
                 <h5 class="text-xl font-medium leading-normal text-gray-900 dark:text-gray-100" id="profileModalLabel">
-                    Profile
+                    User Profile
                 </h5>
                 <!-- Close button -->
                 <button type="button"

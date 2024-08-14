@@ -10,7 +10,7 @@
                 class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 p-4 dark:border-white/10 min-[0px]:rounded-none">
                 <!-- Modal title -->
                 <h5 class="text-xl font-medium leading-normal text-surface dark:text-white" id="postModalLabel">
-                    Post Your Thoughts...
+                    Post Your Thoughts ...
                 </h5>
                 <!-- Close button -->
                 <button type="button"

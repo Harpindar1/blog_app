@@ -8,7 +8,7 @@
             />
         </a>
         <p class="text-lg text-gray-600 mt-4">
-            Your All-In-One Blogging Platform
+            My Blog Application - (Assessment 2)
         </p>
     </div>
 </header>
