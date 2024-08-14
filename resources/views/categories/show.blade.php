@@ -11,7 +11,7 @@
             {{-- Posts Will Be Loaded Here --}}
         </div>
 
-        <!-- Load More -->
+        <!-- Lad More -->
         <div class="w-full flex flex-col items-center">
             <div class="flex items-center py-8">
                 <a id="load-more" href="javascript:void(0);"
