@@ -1,5 +1,5 @@
 <?php
-
+// defining routes imports
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -10,6 +10,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
+
+// my all routeds of blog appplication
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
