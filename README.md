@@ -1,5 +1,5 @@
 # Laravel 11 Blog Application
-
+![Logo](demo.png)
 ## Overview
 This project is a simple blog application built using Laravel 11 and MySQL database. The application leverages Bootstrap 5.3 for a responsive and modern user interface. The primary focus of this project is to implement CRUD (Create, Read, Update, Delete) functionality for a single table, 'posts', in the database.
 
